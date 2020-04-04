@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="807.75" prefWidth="1252.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.Controller">
+  <children>
+    <ImageView disable="true" fitHeight="807.75" fitWidth="1252.0" layoutX="1.0" layoutY="0.0" pickOnBounds="true" preserveRatio="false">
+      <image>
+        <Image url="@Resources/images/libraryy.jpg" />
+      </image>
+    </ImageView>
+    <Button fx:id="loginButton" layoutX="422.0" layoutY="437.0" mnemonicParsing="false" onMouseClicked="#loginClicked" prefHeight="42.1328125" prefWidth="205.0" style="" styleClass="mybutton, " text="Login" textFill="WHITE">
+      <font>
+        <Font name="Ubuntu" size="22.0" fx:id="x1" />
+      </font>
+      <stylesheets>
+        <URL value="@Resources/styles/style.css" />
+      </stylesheets>
+    </Button>
+    <Button id="rigesterButton" fx:id="registerButton" font="$x1" layoutX="652.0" layoutY="437.0" mnemonicParsing="false" onMouseClicked="#registerClicked" prefHeight="42.1328125" prefWidth="205.0" style="" styleClass="mybutton, " text="Register" textFill="WHITE">
+      <stylesheets>
+        <URL value="@Resources/styles/style.css" />
+      </stylesheets>
+    </Button>
+    <TextField fx:id="emailTextbox" layoutX="456.0" layoutY="461.0" prefHeight="41.0" prefWidth="376.0" promptText="Email" visible="false" />
+    <TextField fx:id="firstNameTextbox" layoutX="422.0" layoutY="389.0" prefHeight="29.0" prefWidth="216.0" promptText="First Name" text="" visible="false" />
+    <TextField fx:id="rEmailTextbox" focusTraversable="true" layoutX="422.0" layoutY="432.0" prefHeight="29.0" prefWidth="435.0" promptText="Email" visible="false" />
+    <TextField fx:id="lastNameTextbox" layoutX="641.0" layoutY="389.0" prefHeight="29.0" prefWidth="216.0" promptText="Last Name" visible="false" />
+    <TextField fx:id="telefonTextbox" layoutX="422.0" layoutY="553.0" prefHeight="32.1328125" prefWidth="216.0" promptText="Mobile Number" visible="false" />
+    <TextField fx:id="addressTextbox" layoutX="641.0" layoutY="553.0" prefHeight="32.1328125" prefWidth="216.0" promptText="Shipping Address" visible="false" />
+    <PasswordField fx:id="rPasswordTextbox" layoutX="422.0" layoutY="472.0" prefHeight="29.0" prefWidth="435.0" promptText="Password" visible="false" />
+    <PasswordField fx:id="confirmPasswordTextbox" layoutX="422.0" layoutY="513.0" onAction="#checkPasswordMatch" onKeyPressed="#checkPasswordMatch" onKeyReleased="#checkPasswordMatch" onKeyTyped="#checkPasswordMatch" prefHeight="29.0" prefWidth="435.0" promptText="Confirm Password" visible="false" />
+    <PasswordField fx:id="passwordTextbox" layoutX="455.0" layoutY="524.0" prefHeight="41.0" prefWidth="376.0" promptText="Password" visible="false" />
+    <ImageView id="nonValidIcon" fx:id="notValidIcon" fitHeight="32.0" fitWidth="32.0" layoutX="867.0" layoutY="513.0" pickOnBounds="true" preserveRatio="false" visible="false">
+      <image>
+        <Image url="@Resources/images/unvalid.png" />
+      </image>
+    </ImageView>
+    <ImageView fx:id="validIcon" fitHeight="32.0" fitWidth="32.0" layoutX="867.0" layoutY="512.0" pickOnBounds="true" preserveRatio="false" visible="false">
+      <image>
+        <Image url="@Resources/images/valid.png" />
+      </image>
+    </ImageView>
+    <ScrollPane fx:id="booksPane" layoutX="45.0" layoutY="58.0" opacity="0.9" prefHeight="594.1328125" prefWidth="1168.999977929685" visible="false">
+      <content>
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="438.0" prefWidth="872.0" visible="true" />
+      </content>
+    </ScrollPane>
+    <TextField fx:id="searchAuthorTextbox" layoutX="314.0" layoutY="677.0" prefHeight="35.1328125" prefWidth="204.99997792968497" promptText="Search by Author" visible="false" />
+    <TextField fx:id="searchTitleTextbox" layoutX="536.0" layoutY="677.0" prefHeight="35.1328125" prefWidth="204.99997792968497" promptText="Search by Publisher" visible="false" />
+    <Button fx:id="searchButton" layoutX="355.0" layoutY="724.0" minHeight="26.1328125" mnemonicParsing="false" onAction="#clickSearch" prefHeight="42.1328125" prefWidth="569.00022207031" style="-fx-background-color : #613826;" text="search library" textFill="WHITE" visible="false">
+      <font>
+        <Font size="15.0" />
+      </font>
+    </Button>
+    <ToolBar fx:id="toolBar" layoutX="1.0" layoutY="0.0" prefHeight="51.0" prefWidth="1252.0" style="&#10;-fx-background-color : #613826" visible="false">
+      <items>
+        <Button mnemonicParsing="false" onAction="#clickHome" prefHeight="39.0" prefWidth="91.0" style="&#10;" styleClass="mybutton" text="Home" textFill="WHITE">
+          <font>
+            <Font name="Ubuntu" size="17.0" fx:id="x2" />
+          </font>
+          <stylesheets>
+            <URL value="@Resources/styles/style.css" />
+          </stylesheets>
+        </Button>
+        <Button fx:id="clickProfileButtonToolbar" font="$x2" mnemonicParsing="false" onAction="#clickProfile" prefHeight="39.0" prefWidth="91.0" style="&#10;" styleClass="mybutton" text="Profile" textFill="WHITE">
+          <stylesheets>
+            <URL value="@Resources/styles/style.css" />
+          </stylesheets>
+        </Button>
+        <Button font="$x2" mnemonicParsing="false" onAction="#clickCart" prefHeight="39.0" prefWidth="91.0" style="&#10;" styleClass="mybutton" text="Cart" textAlignment="LEFT" textFill="WHITE">
+          <stylesheets>
+            <URL value="@Resources/styles/style.css" />
+          </stylesheets>
+        </Button>
+        <Button id="clickViewUsers" fx:id="viewUsersButtonToolbar" font="$x2" mnemonicParsing="false" onAction="#clickViewUsers" prefHeight="39.0" prefWidth="91.0" style="&#10;" styleClass="mybutton" text="Users" textFill="WHITE" visible="false">
+          <stylesheets>
+            <URL value="@Resources/styles/style.css" />
+          </stylesheets>
+        </Button>
+        <Button id="clickViewOrders" fx:id="viewOrdersButtonToolbar" font="$x2" mnemonicParsing="false" onAction="#clickViewOrders" prefHeight="39.0" prefWidth="91.0" style="&#10;" styleClass="mybutton" text="Orders" textFill="WHITE" visible="true">
+          <stylesheets>
+            <URL value="@Resources/styles/style.css" />
+          </stylesheets>
+        </Button>
+        <Button id="" fx:id="viewReportButtonToolbar" font="$x2" mnemonicParsing="false" onAction="#viewReport" prefHeight="39.0" prefWidth="91.0" style="&#10;" styleClass="mybutton" text="Reports" textFill="WHITE" visible="true">
+          <stylesheets>
+            <URL value="@Resources/styles/style.css" />
+          </stylesheets>
+        </Button>
+        <Button id="" fx:id="addBookButtonToolbar" font="$x2" mnemonicParsing="false" onAction="#addBook" prefHeight="39.0" prefWidth="107.0" style="&#10;" styleClass="mybutton" text="+ book" textFill="WHITE" visible="true">
+          <stylesheets>
+            <URL value="@Resources/styles/style.css" />
+          </stylesheets>
+        </Button>
+        <Button id="" fx:id="addAuthorButtonToolbar" font="$x2" mnemonicParsing="false" onAction="#addAuthor" prefHeight="39.0" prefWidth="107.0" style="&#10;" styleClass="mybutton" text="+ Author" textFill="WHITE" visible="true">
+          <stylesheets>
+            <URL value="@Resources/styles/style.css" />
+          </stylesheets>
+        </Button>
+        <Button id="" fx:id="getAuthorsButtonToolbar" font="$x2" mnemonicParsing="false" onAction="#viewAuthors" prefHeight="39.0" prefWidth="91.0" style="&#10;" styleClass="mybutton" text="Authors" textFill="WHITE" visible="true">
+          <stylesheets>
+            <URL value="@Resources/styles/style.css" />
+          </stylesheets>
+        </Button>
+        <Button id="" fx:id="addPublisherButtonToolbar" font="$x2" mnemonicParsing="false" onAction="#addPublisher" prefHeight="39.0" prefWidth="118.0" style="&#10;" styleClass="mybutton" text="+ publisher" textFill="WHITE" visible="true">
+          <stylesheets>
+            <URL value="@Resources/styles/style.css" />
+          </stylesheets>
+        </Button>
+        <Button id="" fx:id="publishersButtonToolbar" font="$x2" mnemonicParsing="false" onAction="#viewPublishers" prefHeight="39.0" prefWidth="118.0" style="&#10;" styleClass="mybutton" text="Publishers" textFill="WHITE" visible="true">
+          <stylesheets>
+            <URL value="@Resources/styles/style.css" />
+          </stylesheets>
+        </Button>
+        <Button id="clickLogout" font="$x2" mnemonicParsing="false" onAction="#clickLogout" prefHeight="39.0" prefWidth="107.0" style="&#10;" styleClass="mybutton" text="Log out" textFill="WHITE">
+          <stylesheets>
+            <URL value="@Resources/styles/style.css" />
+          </stylesheets>
+        </Button>
+      </items>
+    </ToolBar>
+    <Button fx:id="buttondecreaseBPP" layoutX="1024.0" layoutY="676.0" minWidth="29.0" mnemonicParsing="false" onMouseClicked="#decreaseBPP" prefWidth="37.0" styleClass="mybutton" text="-" textFill="WHITE" visible="false">
+      <font>
+        <Font name="System Bold" size="13.0" fx:id="x3" />
+      </font>
+      <stylesheets>
+        <URL value="@Resources/styles/style.css" />
+      </stylesheets>
+    </Button>
+    <Button fx:id="buttonIncreaseBPP" font="$x3" layoutX="1061.0" layoutY="676.0" minWidth="29.0" mnemonicParsing="false" onMouseClicked="#increaseBPP" prefWidth="37.0" styleClass="mybutton" text="+" textFill="WHITE" visible="false">
+      <stylesheets>
+        <URL value="@Resources/styles/style.css" />
+      </stylesheets>
+    </Button>
+    <Label fx:id="labelInfo" layoutX="932.0" layoutY="698.0" text="" visible="false" />
+    <Label fx:id="slogan" layoutX="259.0" layoutY="694.0" text="How About A Date With A Good Book?" textFill="BROWN">
+      <font>
+        <Font name="Purisa" size="35.0" />
+      </font>
+    </Label>
+    <Label id="errorL" fx:id="errorLoginLabel" layoutX="513.0" layoutY="568.0" text="Incorrect Email or Password" textFill="RED" visible="false">
+      <font>
+        <Font size="18.0" fx:id="x4" />
+      </font>
+    </Label>
+    <CheckBox fx:id="isManagerCheckBox" font="$x4" layoutX="422.0" layoutY="349.0" mnemonicParsing="false" onAction="#checkedManagerBox" prefHeight="30.0" prefWidth="246.0" text="I'm a Manager" textFill="WHITE" visible="false" wrapText="false" />
+    <PasswordField fx:id="secretCodeTextField" layoutX="641.0" layoutY="350.0" onKeyReleased="#validateManagerCode" prefHeight="29.0" prefWidth="216.0" promptText="Enter Secret Code" visible="false" />
+    <ImageView id="validIcon" fx:id="validIconManager" fitHeight="32.0" fitWidth="32.0" layoutX="864.0" layoutY="350.0" pickOnBounds="true" preserveRatio="false" visible="false">
+      <image>
+        <Image url="@Resources/images/valid.png" />
+      </image>
+    </ImageView>
+    <Button id="loginButton" fx:id="checkoutButton" font="$x1" layoutX="409.0" layoutY="700.0" minHeight="28.1328125" mnemonicParsing="false" onAction="#proceedToCheckout" prefHeight="42.1328125" prefWidth="436.0" style="" styleClass="mybutton, " text="Proceed To Checkout" textFill="WHITE" visible="false">
+      <stylesheets>
+        <URL value="@Resources/styles/style.css" />
+      </stylesheets>
+    </Button>
+    <Button id="buttondecreaseBPP" fx:id="prevPageButton" font="$x3" layoutX="1024.0" layoutY="713.0" minWidth="29.0" mnemonicParsing="false" onAction="#getPrevPage" prefWidth="37.0" styleClass="mybutton" text="&lt;" textFill="WHITE" visible="false">
+      <stylesheets>
+        <URL value="@Resources/styles/style.css" />
+      </stylesheets>
+    </Button>
+    <Button id="buttonIncreaseBPP" fx:id="nextPageButton" font="$x3" layoutX="1061.0" layoutY="713.0" minWidth="29.0" mnemonicParsing="false" onAction="#getNextPage" prefWidth="37.0" styleClass="mybutton" text="&gt;" textFill="WHITE" visible="false">
+      <stylesheets>
+        <URL value="@Resources/styles/style.css" />
+      </stylesheets>
+    </Button>
+    <Button id="loginButton" fx:id="findCertainBook" layoutX="189.0" layoutY="663.0" mnemonicParsing="false" onAction="#findOneBook" prefHeight="82.1328125" prefWidth="84.0" style="" styleClass="mybutton, " text="Find&#10;Certain&#10;book" textAlignment="CENTER" textFill="WHITE" visible="false">
+      <font>
+        <Font name="Ubuntu" size="16.0" />
+      </font>
+      <stylesheets>
+        <URL value="@Resources/styles/style.css" />
+      </stylesheets>
+    </Button>
+    <Label fx:id="pageNumLabel" layoutX="1054.0" layoutY="743.0" prefWidth="51.0" text="0" textAlignment="CENTER" textFill="WHITE" visible="false">
+      <font>
+        <Font size="25.0" />
+      </font>
+    </Label>
+    <ComboBox fx:id="searchCategoryTextbox" layoutX="759.0" layoutY="676.0" prefHeight="35.13280029296875" prefWidth="195.0" promptText="Search by Categories" visible="false">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Art" />
+          <String fx:value="Science" />
+          <String fx:value="Geography" />
+          <String fx:value="Religion" />
+          <String fx:value="History" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+  </children>
+</Pane>

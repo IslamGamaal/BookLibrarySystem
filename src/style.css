@@ -1,0 +1,17 @@
+ .mybutton {
+  -fx-transition-duration: 0.4s;
+  -fx-background-color: #ad7748;
+}
+
+.mybutton:hover {
+  -fx-background-color: #72432f; 
+}
+
+ .mybuttonpromoted {
+   -fx-transition-duration: 0.4s;
+   -fx-background-color: green;
+ }
+
+ .mybuttonpromoted:hover {
+   -fx-background-color: darkgreen;
+ }
